@@ -1,0 +1,80 @@
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.color-primary {
+    color: $color-primary !important;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+@mixin setResponsiveSpaceUtil($directions, $multiplier, $breakpoint) {
+    @each $direction in $directions {
+		#{$direction}: $base-m * $multiplier !important;
+	}
+
+	@media (min-width: $breakpoint) {
+		@each $direction in $directions {
+			#{$direction}: $base-d * $multiplier !important;
+		}
+	}
+}
+
+.mx-8 {
+    @include setResponsiveSpaceUtil(margin-left margin-right, 8, $screen-md);
+}
+
+.my-4 {
+    @include setResponsiveSpaceUtil(margin-top margin-bottom, 4, $screen-md);
+}
+
+.mt-4 {
+    @include setResponsiveSpaceUtil(margin-top, 4, $screen-md);
+}
+
+.mt-8 {
+    @include setResponsiveSpaceUtil(margin-top, 8, $screen-md);
+}
+
+.mt-12 {
+    @include setResponsiveSpaceUtil(margin-top, 12, $screen-md);
+}
+
+.mt-16 {
+    @include setResponsiveSpaceUtil(margin-top, 16, $screen-md);
+}
+
+.mb-12 {
+    @include setResponsiveSpaceUtil(margin-bottom, 12, $screen-md);
+}
+
+.mr-8 {
+	@include setResponsiveSpaceUtil(margin-right, 8, $screen-md);
+}
+
+.p-0 {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.px-8 {
+    @include setResponsiveSpaceUtil(padding-left padding-right, 8, $screen-md);
+}

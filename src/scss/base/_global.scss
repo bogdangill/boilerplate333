@@ -1,0 +1,71 @@
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: calcFluidFontSize(14, 16, 320, 1440);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-title {
+    font-family: 'GG Wolfram', sans-serif;
+    margin-top: 0;
+
+    &--sm {
+        font-size: $base-m * 12;
+        line-height: 1.2;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 16;
+            line-height: 1.2;
+        }
+    }
+    &--md {
+        font-size: $base-m * 16;
+        line-height: 1.2;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 28;
+            line-height: 1.5;
+        }
+    }
+    &--lg {
+        font-size: $base-m * 22;
+        line-height: 1.1;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 40;
+            line-height: 1.35;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    padding-left: $base-m * 8;
+    padding-right: $base-m * 8;
+
+    @media (min-width: $screen-md) {
+        max-width: $base-d * 560;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $screen-xl) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

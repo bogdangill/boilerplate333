@@ -1,0 +1,27 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+	$k: ($f-max - $f-min)/($v-max - $v-min);
+	$b: $f-min - $k * $v-min;
+
+	$b: $b * 1px;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}
+  
+//функция для расчета отзывчивых размеров (отступы, ширины/высоты etc.) относительно ширины вьюпорта
+//1 аргумент - нужный размер в px с конкретного экрана(e.g. десктопный экран в макете)
+//2 аргумент - ширина конкретного экрана в px
+@function calcResponsiveSpace($space-px, $screen-width) {
+	@return 100vw / ($screen-width / $space-px);
+}
+
+@mixin setResponsiveSpace($directions, $multiplier, $breakpoint) {
+	@each $direction in $directions {
+		#{$direction}: $base-m * $multiplier;
+	}
+
+	@media (min-width: $breakpoint) {
+		@each $direction in $directions {
+			#{$direction}: $base-d * $multiplier;
+		}
+	}
+}

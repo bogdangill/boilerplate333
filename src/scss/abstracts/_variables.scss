@@ -1,0 +1,28 @@
+$color-primary: #4F89FF;
+$color-primary-light: #AFCAFF;
+$color-primary-lighter: #EAF1FF;
+$color-primary-lightest: #F2F6FF;
+
+$color-gray-darkest: #1E1E1E;
+$color-gray-darker: #313336;
+$color-gray-dark: #7A7A7A;
+$color-gray: #C4C4C4; 
+$color-gray-light: #B8B8B8;
+
+
+//basics
+//базовая константа для размеров и отступов. опирается на корневой размер шрифта в html
+$base-d: 0.125rem; /* desktop: 2px (если в html font-size:~16px) */
+$base-m: 0.142rem; /* mobile: 2px (если в html font-size:~14px) */
+
+//для плавных переходов/анимаций
+$transition: .2s ease-out;
+
+//брейкпоинты
+$screen-sm:                   575px;
+$screen-md:                   767px;
+$screen-lg:                   991px;
+$screen-xl:                   1199px;
+$screen-xxl:                  1499px;
+
+$letter-spacing: .15px;
