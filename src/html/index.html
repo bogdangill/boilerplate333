@@ -10,8 +10,17 @@
     <title>Кадровое агентство Помогатель.ру</title>
 </head>
 <body class="index__body">
-    {% include "_header.html" %}
-    {% set headerClasses = "index__header" %}
+    <div class="index__header container">
+        {% include "_header.html" %}
+    </div>
+    <main>
+        <div class="index__main">
+            {% include "_main.html" %}
+        </div>
+        <div class="index__main-info">
+            {% include "_main-info.html" %}
+        </div>
+    </main>
     <script src="scripts.min.js"></script>
 </body>
 </html>
