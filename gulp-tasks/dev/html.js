@@ -3,9 +3,9 @@ import nunjucksRender from "gulp-nunjucks-render";
 import browsersync from "browser-sync";
 
 export const html = () => {
-    return gulp.src(`./src/*.html`)
+    return gulp.src(`./src/html/index.html`) //для лендинга можно только индекс
         .pipe(nunjucksRender({
-            path: ["src/components/"] //можно и просто строку
+            path: ["src/html/components/"] //можно и просто строку
         }))
         .pipe(gulp.dest(`./build/`))
         .pipe(browsersync.stream());

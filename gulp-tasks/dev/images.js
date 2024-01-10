@@ -8,12 +8,12 @@ export const images = () => {
         .pipe(webp())
         .pipe(gulp.dest(`./build/img/`))
         .pipe(gulp.src(`./src/img/**/*.+(png|jpg|gif|ico|svg|webp)`))
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true,
-            optimizationLevel: 0 
-        }))
+        // .pipe(imagemin({
+        //     progressive: true,
+        //     svgoPlugins: [{ removeViewBox: false }],
+        //     interlaced: true,
+        //     optimizationLevel: 0 
+        // }))
         .pipe(gulp.dest(`./build/img/`))
         .pipe(browsersync.stream());
 }

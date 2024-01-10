@@ -1,5 +1,5 @@
 @function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
-	$k: ($f-max - $f-min)/($v-max - $v-min);
+	$k: calc(($f-max - $f-min) / ($v-max - $v-min));
 	$b: $f-min - $k * $v-min;
 
 	$b: $b * 1px;
@@ -11,7 +11,7 @@
 //1 аргумент - нужный размер в px с конкретного экрана(e.g. десктопный экран в макете)
 //2 аргумент - ширина конкретного экрана в px
 @function calcResponsiveSpace($space-px, $screen-width) {
-	@return 100vw / ($screen-width / $space-px);
+	@return 100vw / calc(($screen-width / $space-px));
 }
 
 @mixin setResponsiveSpace($directions, $multiplier, $breakpoint) {

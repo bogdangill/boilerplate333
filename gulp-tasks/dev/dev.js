@@ -14,7 +14,7 @@ import { makeSprite } from "../common/makeSprite.js";
 //наблюдатель за изменениями в файлах
 function watcher() {
     gulp.watch("./src/scss/**/*.scss", styles);
-    gulp.watch("./src/*.html", html);
+    gulp.watch("./src/html/**/*.html", html);
     gulp.watch("./src/js/**/*.js", scripts);
     gulp.watch("./src/img/**/*.{png, jpeg, jpg, webp, svg}", images);
     gulp.watch("./src/icons/*.svg", makeSprite);
