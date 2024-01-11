@@ -1,0 +1,15 @@
+.advantages {
+    text-align: center;
+    background-color: #F3EADA;
+
+    padding-top: $base-m * 30;
+    padding-bottom: $base-m * 30;
+
+    &__title {
+        margin-bottom: $base-m * 20;
+    }
+
+    &__img {
+        margin-bottom: $base-m * 20;
+    }
+}
