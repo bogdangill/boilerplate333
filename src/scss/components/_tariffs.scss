@@ -1,0 +1,99 @@
+.tariffs {
+    background-color: $color-primary-lighter;
+    padding-bottom: $base-m * 30;
+
+    &__title {
+        text-align: center;
+
+        padding-top: $base-m * 45;
+        margin-bottom: $base-m * 20;
+    }
+
+    &__item:not(:last-of-type) {
+        margin-bottom: $base-m * 12;
+    }
+}
+
+.tariff-card {
+    background-color: #fff;
+    border: $base-m solid $color-primary;
+    border-radius: 32px;
+
+    padding: $base-m * 12;
+
+    dl {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-size: $base-m * 12;
+        line-height: 1.2;
+        font-weight: 600;
+        color: $color-gray-darkest;
+
+        margin-bottom: $base-m * 6;
+
+        &:has(svg) {
+            display: inline-grid;
+            grid-template-columns: $base-m * 14 1fr $base-m * 14;
+            gap: $base-m * 4;
+        }
+    }
+
+    &__icon {
+        width: $base-m * 14;
+        height: $base-m * 14;
+    }
+
+    &__subtitle {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+        color: $color-gray-dark;
+        font-weight: 400;
+
+        margin-bottom: $base-m * 16;
+    }
+
+    &__options {
+        margin-bottom: $base-m * 16;
+    }
+
+    &__option {
+        position: relative;
+        font-size: $base-m * 8;
+        line-height: 1.4;
+
+        padding-left: $base-m * 16;
+        
+        &:not(:last-of-type) {
+            margin-bottom: $base-m * 10;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: $base-m * 3;
+            left: 0;
+            width: $base-m * 6;
+            height: $base-m * 6;
+            background-color: $color-primary;
+            border-radius: 50%;
+        }
+    }
+
+    &__price {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        font-size: $base-m * 16;
+        line-height: 1.2;
+        font-weight: 600;
+
+        margin-bottom: $base-m * 16;
+    }
+
+    &__btn {
+        width: 100%;
+    }
+}

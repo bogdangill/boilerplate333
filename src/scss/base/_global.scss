@@ -1,5 +1,5 @@
 html {
-    font-family: 'Inter', sans-serif;
+    font-family: $font-primary;
     font-size: calcFluidFontSize(14, 16, 320, 1440);
 }
 
@@ -22,7 +22,7 @@ html {
 }
 
 .landing-title {
-    font-family: 'GG Wolfram', sans-serif;
+    font-family: $font-secondary;
     font-weight: 400;
     color: $color-gray-darkest;
     margin-top: 0;

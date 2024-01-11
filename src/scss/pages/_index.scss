@@ -8,4 +8,9 @@
         width: 100%;
         z-index: 1;
     }
+
+    &__main-info {
+        margin-top: -$base-m * 20;
+        margin-bottom: -$base-m * 20;
+    }
 }
