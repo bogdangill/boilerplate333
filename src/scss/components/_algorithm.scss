@@ -1,0 +1,115 @@
+.algorithm {
+    padding-top: $base-m * 30;
+    padding-bottom: $base-m * 30;
+
+    &__title {
+        text-align: center;
+        margin-bottom: $base-m * 20;
+    }
+
+    &__list {
+        list-style: none;
+        padding-left: 0;
+
+        margin-bottom: $base-m * 20;
+    }
+
+    &__item:not(:last-of-type) {
+        margin-bottom: $base-m * 8;
+    }
+}
+
+.algorithm-card {
+    display: flex;
+    flex-direction: column;
+    min-height: $base-m * 188;
+    border-radius: 28px;
+    
+    padding: $base-m * 14;
+
+    &--peach {
+        background-image: 
+            image-set(
+                url("./img/checklist-peach.webp") type("image/webp") 1x,
+                url("./img/checklist-peach@2x.webp") type("image/webp") 2x,
+                url("./img/checklist-peach.png") type("image/png") 1x,
+                url("./img/checklist-peach@2x.png") type("image/png") 2x
+            );
+        background-image:         
+            -webkit-image-set(
+                url("./img/checklist-peach.webp") 1x,
+                url("./img/checklist-peach@2x.webp") 2x,
+                url("./img/checklist-peach.png") 1x,
+                url("./img/checklist-peach@2x.png") 2x
+            );
+
+        .algorithm-card__icon {
+            margin: $base-m * 24 $base-m * 10 auto auto;
+        }
+    }
+    &--pink {
+        background-image: 
+            image-set(
+                url("./img/resumes-pink.webp") type("image/webp") 1x,
+                url("./img/resumes-pink@2x.webp") type("image/webp") 2x,
+                url("./img/resumes-pink.png") type("image/png") 1x,
+                url("./img/resumes-pink@2x.png") type("image/png") 2x
+            );
+        background-image:         
+            -webkit-image-set(
+                url("./img/resumes-pink.webp") 1x,
+                url("./img/resumes-pink@2x.webp") 2x,
+                url("./img/resumes-pink.png") 1x,
+                url("./img/resumes-pink@2x.png") 2x
+            );
+
+        .algorithm-card__icon {
+            margin: $base-m * 18 auto auto $base-m * 22;
+        }
+    }
+    &--lightblue {
+        background-image: 
+            image-set(
+                url("./img/handshake-lightblue.webp") type("image/webp") 1x,
+                url("./img/handshake-lightblue@2x.webp") type("image/webp") 2x
+                url("./img/handshake-lightblue.png") type("image/png") 1x,
+                url("./img/handshake-lightblue@2x.png") type("image/png") 2x
+            );
+        background-image:         
+            -webkit-image-set(
+                url("./img/handshake-lightblue.webp") 1x,
+                url("./img/handshake-lightblue@2x.webp") 2x,
+                url("./img/handshake-lightblue.png") 1x,
+                url("./img/handshake-lightblue@2x.png") 2x
+            );
+
+        .algorithm-card__icon {
+            margin: $base-m * 15 auto auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: $base-m * 8;
+    }
+
+    &__description {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+        
+        margin: 0;
+    }
+
+    &__icon {
+        display: grid;
+        place-items: center;
+        width: $base-m * 36;
+        height: $base-m * 36;
+        background-color: #fff;
+        border-radius: 50%;
+
+        svg {
+            width: $base-m * 24;
+            height: $base-m * 24;
+        }
+    }
+}
