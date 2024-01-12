@@ -1,0 +1,123 @@
+.workers {
+    padding-top: $base-m * 30;
+    padding-bottom: $base-m * 30;
+
+    &__title {
+        text-align: center;
+        margin-bottom: $base-m * 20;
+    }
+
+    &__carousel {
+        margin-bottom: $base-m * 20;
+        margin-right: -$base-m * 8;
+    }
+}
+
+.workers-carousel {
+    &__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: $base-m * 12;
+    }
+
+    &__link {
+        display: none;
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+    }
+
+    &__tab {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+        color: $color-gray-darkest;
+        background-color: #fff;
+        border-radius: 28px;
+        border: 1px solid $color-gray;
+        transition: $transition;
+
+        padding: $base-m * 3 $base-m * 8;
+
+        &--active {
+            background-color: $color-primary-lighter;
+            border-color: $color-primary;
+        }
+
+        &:not(:last-of-type) {
+            margin-right: $base-m * 4;
+        }
+    }
+}
+
+.workers-slider {
+    &__slide {
+        width: $base-m * 108;
+        padding-right: $base-m * 8;
+    }
+}
+
+.worker-card {
+    margin: 0;
+
+    &__photo {
+        position: relative;
+        overflow: hidden;
+        border-radius: 26px;
+
+        margin-bottom: $base-m * 8;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 0;
+        background-color: transparent;
+        
+        padding: 0;
+
+        svg {
+            color: $color-primary;
+            width: $base-m * 32;
+            height: $base-m * 32;
+        }
+    }
+
+    &__rating {
+        display: grid;
+        grid-template-columns: repeat(5, $base-m * 12);
+
+        margin-bottom: $base-m * 3;
+
+        svg {
+            color: #FFC186;
+            width: $base-m * 12;
+            height: $base-m * 12;
+        }
+    }
+
+    &__title {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+        font-weight: 600;
+        font-style: normal;
+
+        margin-bottom: $base-m;
+    }
+
+    &__review {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+
+        margin: 0;
+    }
+}
