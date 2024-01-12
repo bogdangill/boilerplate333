@@ -25,7 +25,7 @@ let workerTabsArr = [];
 
 workerTabs.forEach(tab => workerTabsArr.push(tab.dataset.tab));
 
-let workerTabSlider = new Swiper('.workers-carousel', {
+const workerTabSlider = new Swiper('.workers-carousel', {
     modules: [Pagination, A11y],
     slidesPerView: 1,
     allowTouchMove: false,
@@ -44,12 +44,18 @@ let workerTabSlider = new Swiper('.workers-carousel', {
     }
 });
 
-let nannySlider = new Swiper('.workers-slider--nanny', {
+const nannySlider = new Swiper('.workers-slider--nanny', {
     modules: [A11y],
     slidesPerView: 'auto',
     initialSlide: 0
 });
-let housekeeperSlider = new Swiper('.workers-slider--housekeeper', {
+const housekeeperSlider = new Swiper('.workers-slider--housekeeper', {
+    modules: [A11y],
+    slidesPerView: 'auto',
+    initialSlide: 0
+});
+
+const reviewsSlider = new Swiper('.reviews__slider', {
     modules: [A11y],
     slidesPerView: 'auto',
     initialSlide: 0
@@ -58,3 +64,4 @@ let housekeeperSlider = new Swiper('.workers-slider--housekeeper', {
 workerTabSlider.init();
 nannySlider.init();
 housekeeperSlider.init();
+reviewsSlider.init();

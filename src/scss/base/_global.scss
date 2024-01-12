@@ -1,6 +1,7 @@
 html {
     font-family: $font-primary;
     font-size: calcFluidFontSize(14, 16, 320, 1440);
+    color: $color-gray-darkest;
 }
 
 .visually-hidden {
