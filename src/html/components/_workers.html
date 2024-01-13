@@ -1,294 +1,149 @@
+{% set workers = {
+    nannies: [
+        {
+            name: "Виктория Н.",
+            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+        },
+        {
+            name: "Виктория Н.",
+            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+        },
+        {
+            name: "Виктория Н.",
+            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+        }
+    ],
+    housekeepers: [
+        {
+            name: "Рабыня Изаура",
+            text: "Я очень давно работаю домашней рабыней, что и забыла когда все это ..."
+        },
+        {
+            name: "Рабыня Изаура",
+            text: "Я очень давно работаю домашней рабыней, что и забыла когда все это ..."
+        },
+        {
+            name: "Рабыня Изаура",
+            text: "Я очень давно работаю домашней рабыней, блиин вот бы щас в Бразилию сгонять ..."
+        }
+    ]
+} %}
+
 <section class="workers">
     <h2 class="landing-title landing-title--md workers__title">
-        Наши работники
+        {{landing.workers.TITLE}}
     </h2>
     <div class="workers-carousel swiper workers__carousel">
         <div class="workers-carousel__navigation">
             <ul class="workers-carousel__pagination"></ul>
             <a href="" class="pmgt-button pmgt-button--sm pmgt-button--outline workers-carousel__link">
-                Все анкеты
+                {{landing.workers.ALL_RESUMES}}
             </a>
         </div>
         <ul class="workers-carousel-content swiper-wrapper">
-            <li class="workers-carousel-content__item swiper-slide" data-tab="Няня">
+            <li class="workers-carousel-content__item swiper-slide" data-tab="{{landing.workers.TAB_NANNY}}">
                 <div class="workers-slider swiper workers-slider--nanny">
                     <ul class="swiper-wrapper">
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-1.webp 1x, ../../img/nanny-1@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-1.png"
-                                            srcset="../../img/nanny-1@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
+                        {% for nanny in workers.nannies %}
+                            <li class="workers-slider__slide swiper-slide">
+                                <blockquote class="worker-card">
+                                    <div class="worker-card__photo">
+                                        <picture>
+                                            <source
+                                                srcset='../../img/nanny-{{loop.index}}.webp 1x, ../../img/nanny-{{loop.index}}@2x.webp 2x'
+                                                type="image/webp">
+                                            <img
+                                                src="../../img/nanny-{{loop.index}}.png"
+                                                srcset="../../img/nanny-{{loop.index}}@2x.png"
+                                                alt="{{nanny.name}}"
+                                                width="216"
+                                                height="264">
+                                        </picture>
+                                        <button class="worker-card__btn">
+                                            <svg>
+                                                <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="worker-card__rating">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Виктория Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-2.webp 1x, ../../img/nanny-2@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-2.png"
-                                            srcset="../../img/nanny-2@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Виктория Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-3.webp 1x, ../../img/nanny-3@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-3.png"
-                                            srcset="../../img/nanny-3@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Виктория Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
+                                        <svg>
+                                            <use href="./img/icons/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use href="./img/icons/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <cite class="worker-card__title">
+                                        {{nanny.name}}
+                                    </cite>
+                                    <p class="worker-card__review">
+                                        {{nanny.text}}
+                                    </p>
+                                </blockquote>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </li>
-            <li class="workers-carousel-content__item swiper-slide" data-tab="Домработница">
+            <li class="workers-carousel-content__item swiper-slide" data-tab="{{landing.workers.TAB_HOUSEKEEPER}}">
                 <div class="workers-slider swiper workers-slider--housekeeper">
                     <ul class="swiper-wrapper">
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-1.webp 1x, ../../img/nanny-1@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-1.png"
-                                            srcset="../../img/nanny-1@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
+                        {% for housekeeper in workers.housekeepers %}
+                            <li class="workers-slider__slide swiper-slide">
+                                <blockquote class="worker-card">
+                                    <div class="worker-card__photo">
+                                        <picture>
+                                            <source
+                                                srcset='../../img/nanny-{{loop.index}}.webp 1x, ../../img/nanny-{{loop.index}}@2x.webp 2x'
+                                                type="image/webp">
+                                            <img
+                                                src="../../img/nanny-{{loop.index}}.png"
+                                                srcset="../../img/nanny-{{loop.index}}@2x.png"
+                                                alt="{{nanny.name}}"
+                                                width="216"
+                                                height="264">
+                                        </picture>
+                                        <button class="worker-card__btn">
+                                            <svg>
+                                                <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="worker-card__rating">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Домработница Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-2.webp 1x, ../../img/nanny-2@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-2.png"
-                                            srcset="../../img/nanny-2@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Еще одна Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
-                        <li class="workers-slider__slide swiper-slide">
-                            <blockquote class="worker-card">
-                                <div class="worker-card__photo">
-                                    <picture>
-                                        <source
-                                            srcset='../../img/nanny-3.webp 1x, ../../img/nanny-3@2x.webp 2x'
-                                            type="image/webp">
-                                        <img
-                                            src="../../img/nanny-3.png"
-                                            srcset="../../img/nanny-3@2x.png"
-                                            alt="Виктория Н."
-                                            width="216"
-                                            height="264">
-                                    </picture>
-                                    <button class="worker-card__btn">
                                         <svg>
-                                            <use xlink:href="./img/icons/sprite.svg#play"></use>
+                                            <use href="./img/icons/sprite.svg#star"></use>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="worker-card__rating">
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                    <svg>
-                                        <use href="./img/icons/sprite.svg#star"></use>
-                                    </svg>
-                                </div>
-                                <cite class="worker-card__title">
-                                    Виктория Н.
-                                </cite>
-                                <p class="worker-card__review">
-                                    Я очень давно работаю няней, что и забыла когда все это ...
-                                </p>
-                            </blockquote>
-                        </li>
+                                        <svg>
+                                            <use href="./img/icons/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use href="./img/icons/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <cite class="worker-card__title">
+                                        {{housekeeper.name}}
+                                    </cite>
+                                    <p class="worker-card__review">
+                                        {{housekeeper.text}}
+                                    </p>
+                                </blockquote>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </li>
@@ -296,7 +151,7 @@
     </div>
     <div class="text-center">
         <button class="pmgt-button pmgt-button--md pmgt-button--primary pmgt-button--blink" data-ripple="btn">
-            Оставить заявку
+            {{landing.common.SUBMIT}}
         </button>
     </div>
 </section>

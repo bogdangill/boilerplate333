@@ -1,17 +1,16 @@
 <section class="main container">
     <h1 class="main-title main__title">
         <span class="landing-title landing-title--lg">
-            Кадровое агентство
+            {{landing.main.TITLE}}
         </span>
         <span class="main-title__badge">
-            Помогатель.ру
+            {{landing.main.TITLE_BADGE}}
         </span>
     </h1>
     <p class="main__description">
-        14 лет мы помогаем в поиске<br>
-        домашнего персонала
+        {{landing.main.DESCRIPTION | safe}}
     </p>
     <button href="" class="pmgt-button main__btn pmgt-button--primary pmgt-button--blink pmgt-button--md" data-ripple="btn">
-        Оставить заявку
+        {{landing.common.SUBMIT}}
     </button>
 </section>

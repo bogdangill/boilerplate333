@@ -1,68 +1,72 @@
+{% set tariffs = [
+    {
+        title: landing.tariffs.tariff_list.standart.TITLE,
+        description: landing.tariffs.tariff_list.standart.DESCRIPTION,
+        options: [
+            landing.tariffs.tariff_list.standart.OPTION_1,
+            landing.tariffs.tariff_list.standart.OPTION_2
+        ],
+        price: landing.tariffs.tariff_list.standart.PRICE
+    },{
+        isPremium: true,
+        title: landing.tariffs.tariff_list.premium.TITLE,
+        description: landing.tariffs.tariff_list.premium.DESCRIPTION,
+        options: [
+            landing.tariffs.tariff_list.premium.OPTION_1,
+            landing.tariffs.tariff_list.premium.OPTION_2,
+            landing.tariffs.tariff_list.premium.OPTION_3
+        ],
+        price: landing.tariffs.tariff_list.premium.PRICE
+    }
+] %}
+
 <section class="tariffs container">
     <h2 class="landing-title landing-title--md tariffs__title">
-        Тарифы
+        {{landing.tariffs.TITLE}}
     </h2>
     <ul class="tariffs__list">
-        <li class="tariffs__item">
-            <div class="tariff-card">
-                <dl>
-                    <dt class="tariff-card__title">
-                        Стандарт
-                    </dt>
-                    <dd class="tariff-card__subtitle">
-                        Для эффективного поиска
-                    </dd>
-                </dl>
-                <ul class="tariff-card__options">
-                    <li class="tariff-card__option">
-                        Подберём до 6 подходящих анкет работников
-                    </li>
-                    <li class="tariff-card__option">
-                        Предложим 3 лучших кандидата на выбор
-                    </li>
-                </ul>
-                <span class="tariff-card__price">
-                    9 900 ₽
-                </span>
-                <button class="pmgt-button pmgt-button--outline pmgt-button--md tariff-card__btn"
-                    data-ripple="btn">
-                    Оставить заявку
-                </button>
-            </div>
-        </li>
-        <li class="tariffs__item">
-            <div class="tariff-card">
-                <dl>
-                    <dt class="tariff-card__title">
-                        <div></div>
-                        Премиум
-                        <svg class="tariff-card__icon">
-                            <use href="./img/icons/sprite.svg#crown"></use>
-                        </svg>
-                    </dt>
-                    <dd class="tariff-card__subtitle">
-                        Для тщательного выбора
-                    </dd>
-                </dl>
-                <ul class="tariff-card__options">
-                    <li class="tariff-card__option">
-                        Подберём до 12 подходящих анкет работников
-                    </li>
-                    <li class="tariff-card__option">
-                        Предложим 6 лучших кандидатов на выбор
-                    </li>
-                    <li class="tariff-card__option">
-                        1 год гарантии — заменим работника бесплатно
-                    </li>
-                </ul>
-                <span class="tariff-card__price">
-                    19 900 ₽
-                </span>
-                <button class="pmgt-button pmgt-button--primary pmgt-button--md pmgt-button--blink tariff-card__btn"
-                    data-ripple="btn">
-                    Оставить заявку
-                </button>
-            </div>
-        </li>
+        {% for tariff in tariffs %}
+            <li class="tariffs__item">
+                <div class="tariff-card">
+                    <dl>
+                        <dt class="tariff-card__title">
+                            {% if tariff.isPremium %}
+                                <div></div>
+                                {{tariff.title}}
+                                <svg class="tariff-card__icon">
+                                    <use href="./img/icons/sprite.svg#crown"></use>
+                                </svg>
+                            {% else %}
+                                {{tariff.title}}
+                            {% endif %}
+                        </dt>
+                        <dd class="tariff-card__subtitle">
+                            {{tariff.description}}
+                        </dd>
+                    </dl>
+                    <ul class="tariff-card__options">
+                        {% for option in tariff.options %}
+                            <li class="tariff-card__option">
+                                {{option}}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <span class="tariff-card__price">
+                        {{tariff.price}}
+                    </span>
+                    {% if tariff.isPremium %}
+                        <button class="pmgt-button pmgt-button--primary pmgt-button--md tariff-card__btn"
+                            data-ripple="btn">
+                            {{landing.common.SUBMIT}}
+                        </button>
+                    {% else %}
+                        <button class="pmgt-button pmgt-button--outline pmgt-button--md tariff-card__btn"
+                            data-ripple="btn">
+                            {{landing.common.SUBMIT}}
+                        </button>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 </section>
