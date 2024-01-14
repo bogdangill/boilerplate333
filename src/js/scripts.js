@@ -1,6 +1,7 @@
 import { Ripple } from "./ripple.js";
 import Swiper from "swiper";
 import { Pagination, A11y } from "swiper/modules";
+import { toggleAcc } from "./accordion.js";
 
 const rippleTargetsPrimary = document.querySelectorAll(".pmgt-button--primary[data-ripple='btn']");
 const rippleTargetsOutline = document.querySelectorAll(".pmgt-button--outline[data-ripple='btn']");
@@ -20,7 +21,7 @@ for (let target of rippleTargetsOutline) {
     });
 };
 
-let workerTabs = document.querySelectorAll('[data-tab]');
+const workerTabs = document.querySelectorAll('[data-tab]');
 let workerTabsArr = [];
 
 workerTabs.forEach(tab => workerTabsArr.push(tab.dataset.tab));
@@ -65,3 +66,24 @@ workerTabSlider.init();
 nannySlider.init();
 housekeeperSlider.init();
 reviewsSlider.init();
+
+const accordions = document.querySelectorAll('.accordion');
+//добавяю дефолтный модификатор таким способом, чтобы контент был визуально доступен даже если js выключен в браузере
+accordions.forEach(acc => acc.classList.add('accordion--hidden'));
+
+if (accordions.length > 0) {
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", () => {
+            if (accordion.classList.contains('accordion--visible')) {
+                toggleAcc(accordion, true);
+                return
+            }
+
+            accordions.forEach(acc => toggleAcc(acc, true));
+
+            if (accordion.classList.contains('accordion--hidden')) {
+                toggleAcc(accordion)
+            }
+        })
+    })
+}

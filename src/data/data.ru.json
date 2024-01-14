@@ -90,6 +90,27 @@
                     "DATE_RAW": "2023-05-20"
                 }
             }
+        },
+        "faq": {
+            "TITLE": "Вопросы и ответы",
+            "accordions": {
+                "acc_1": {
+                    "TITLE": "Почему так дёшево?",
+                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                },
+                "acc_2": {
+                    "TITLE": "А если я сам буду искать?",
+                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                },
+                "acc_3": {
+                    "TITLE": "Что за гарантия в тарифе Премиум?",
+                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                },
+                "acc_4": {
+                    "TITLE": "Как проверяем работников?",
+                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                }
+            }
         }
     }
 }

@@ -1,0 +1,54 @@
+{% set accordions = [
+    {
+        id: "accordion1",
+        title: landing.faq.accordions.acc_1.TITLE,
+        description: landing.faq.accordions.acc_1.DESCRIPTION
+    },
+    {
+        id: "accordion2",
+        title: landing.faq.accordions.acc_2.TITLE,
+        description: landing.faq.accordions.acc_2.DESCRIPTION
+    },
+    {
+        id: "accordion3",
+        title: landing.faq.accordions.acc_3.TITLE,
+        description: landing.faq.accordions.acc_3.DESCRIPTION
+    },
+    {
+        id: "accordion4",
+        title: landing.faq.accordions.acc_4.TITLE,
+        description: landing.faq.accordions.acc_4.DESCRIPTION
+    }
+] %}
+
+<section class="faq">
+    <h2 class="landing-title landing-title--md faq__title">
+        {{landing.faq.TITLE}}
+    </h2>
+    <ul class="faq__accordions">
+        {% for acc in accordions %}
+            <li class="faq__accordion accordion">
+                <h3 class="accordion__header">
+                    <button class="accordion__trigger" aria-expanded="false" aria-controls="{{acc.id}}">
+                        {{acc.title}}
+                    </button>
+                    <svg class="accordion__icon">
+                        <use href="./img/icons/sprite.svg#chevron-bottom"></use>
+                    </svg>
+                </h3>
+                <div class="accordion__body" id="{{acc.id}}">
+                    <div class="overflow-hidden">
+                        <p class="accordion__text">
+                            {{acc.description}}
+                        </p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="text-center">
+        <button class="pmgt-button pmgt-button--md pmgt-button--primary pmgt-button--blink" data-ripple="btn">
+            {{landing.common.SUBMIT}}
+        </button>
+    </div>
+</section>

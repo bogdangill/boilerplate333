@@ -26,6 +26,10 @@
     font-weight: 500 !important;
 }
 
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
 @mixin setResponsiveSpaceUtil($directions, $multiplier, $breakpoint) {
     @each $direction in $directions {
 		#{$direction}: $base-m * $multiplier !important;

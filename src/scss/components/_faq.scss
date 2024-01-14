@@ -1,0 +1,89 @@
+.faq {
+    padding-top: $base-m * 30;
+    padding-bottom: $base-m * 30;
+
+    &__title {
+        text-align: center;
+        margin-bottom: $base-m * 20;
+    }
+
+    &__accordions {
+        margin-bottom: $base-m * 20;
+    }
+
+    &__accordion:not(:last-of-type) {
+        margin-bottom: $base-m * 12;
+    }
+}
+
+.accordion {
+    transition: background $transition;
+
+    &--hidden {
+        .accordion__icon {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        .accordion__body {
+            // height: 0;
+            grid-template-rows: 0fr;
+            opacity: 0;
+        }
+    }
+
+    &--visible {        
+        .accordion__trigger {
+            color: $color-primary;
+        }
+        .accordion__icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .accordion__body {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+    }
+
+    &__header {
+        cursor: pointer;
+        position: relative;
+
+        margin-bottom: $base-m * 4;
+    }
+
+    &__trigger {
+        cursor: inherit;
+        font-size: $base-m * 9;
+        line-height: 1.4;
+        font-weight: 600;
+        color: $color-gray-darkest;
+        max-width: calc(100% - $base-m * 12);
+        text-align: left;
+        border: 0;
+        transition: color $transition;
+
+        padding: 0;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: $base-m * 12;
+        height: $base-m * 12;
+        
+        color: $color-gray-light;
+        transition: transform $transition;
+    }
+
+    &__body {
+        display: grid;
+        overflow: hidden;
+        transition: $transition;
+    }
+
+    &__text {
+        font-size: $base-m * 8;
+        line-height: 1.4;
+        color: $color-gray-darkest;
+    }
+}
