@@ -3,7 +3,11 @@
     background-color: #fff;
     border-radius: 50px;
 
-    padding: $base-m * 20 $base-m * 8;
+    padding: $base-m * 20 0;
+
+    @media (min-width: $screen-md) {
+        border-radius: 100px;
+    }
 
     &__description {
         display: inline-block;
@@ -14,6 +18,11 @@
 
         margin: 0;
         padding: $base-m * 25 $base-m * 12;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 24;
+            padding: $base-d * 40 $base-d * 12;
+        }
     }
 
     &__accent {

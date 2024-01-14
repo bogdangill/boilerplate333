@@ -1,16 +1,20 @@
-<section class="main container">
-    <h1 class="main-title main__title">
-        <span class="landing-title landing-title--lg">
-            {{landing.main.TITLE}}
-        </span>
-        <span class="main-title__badge">
-            {{landing.main.TITLE_BADGE}}
-        </span>
-    </h1>
-    <p class="main__description">
-        {{landing.main.DESCRIPTION | safe}}
-    </p>
-    <button href="" class="pmgt-button main__btn pmgt-button--primary pmgt-button--blink pmgt-button--md" data-ripple="btn">
-        {{landing.common.SUBMIT}}
-    </button>
-</section>
+<div class="main">
+    <section class="container">
+        <h1 class="main-title main__title">
+            <span class="landing-title landing-title--lg">
+                {{landing.main.TITLE}}
+            </span>
+            <span class="main-title__badge">
+                {{landing.main.TITLE_BADGE}}
+            </span>
+        </h1>
+        <p class="main__description">
+            {{landing.main.DESCRIPTION | safe}}
+        </p>
+        <div class="d-flex justify-center">
+            <button href="" class="pmgt-button main__btn pmgt-button--primary pmgt-button--blink pmgt-button--md" data-ripple="btn">
+                {{landing.common.SUBMIT}}
+            </button>
+        </div>
+    </section>
+</div>

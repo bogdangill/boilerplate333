@@ -2,6 +2,11 @@
     padding-top: $base-m * 30;
     padding-bottom: $base-m * 30;
 
+    @media (min-width: $screen-md) {
+        padding-top: $base-d * 60;
+        padding-bottom: $base-d * 60;
+    }
+
     &__title {
         text-align: center;
         margin-bottom: $base-m * 20;
@@ -12,6 +17,32 @@
         padding-left: 0;
 
         margin-bottom: $base-m * 20;
+
+        @media (min-width: $screen-md) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax($base-d * 190, $base-d * 238));
+            justify-content: center;
+            grid-template-areas: 
+                "b a"
+                "b c";
+            gap: $base-d * 12;
+
+            .algorithm__item {
+                margin: 0 !important;
+
+                &:first-of-type {
+                    grid-area: a;
+                }
+                &:last-of-type {
+                    grid-area: c;
+                }
+                &:nth-of-type(2) {
+                    grid-area: b;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
     }
 
     &__item:not(:last-of-type) {
@@ -24,8 +55,14 @@
     flex-direction: column;
     min-height: $base-m * 188;
     border-radius: 28px;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     padding: $base-m * 14;
+
+    @media (min-width: $screen-md) {
+        min-height: $base-d * 274;
+    }
 
     &--peach {
         background-image: 

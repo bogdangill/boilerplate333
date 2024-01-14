@@ -2,19 +2,44 @@
     background-color: $color-primary-lighter;
     padding-bottom: $base-m * 30;
 
+    @media (min-width: $screen-md) {
+        padding-bottom: $base-d * 60;
+    }
+
     &__title {
         text-align: center;
 
         padding-top: $base-m * 45;
         margin-bottom: $base-m * 20;
+
+        @media (min-width: $screen-md) {
+            padding-top: $base-d * 85;
+            margin-bottom: $base-d * 40;
+        }
+    }
+
+    &__list {
+        @media (min-width: $screen-md) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            gap: $base-d * 12;
+
+            padding: 0 $base-d * 12;
+        }
     }
 
     &__item:not(:last-of-type) {
-        margin-bottom: $base-m * 12;
+        @media (max-width: $screen-md) {
+            margin-bottom: $base-m * 12;
+        }
     }
 }
 
 .tariff-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background-color: #fff;
     border: $base-m solid $color-primary;
     border-radius: 32px;
@@ -90,6 +115,7 @@
         line-height: 1.2;
         font-weight: 600;
 
+        margin-top: auto;
         margin-bottom: $base-m * 16;
     }
 

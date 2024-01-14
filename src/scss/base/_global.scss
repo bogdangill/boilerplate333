@@ -71,4 +71,10 @@ html {
         padding-left: 0;
         padding-right: 0;
     }
+
+    &--narrow {
+        @media (min-width: $screen-md) {
+            max-width: $base-d * 489;
+        }
+    }
 }

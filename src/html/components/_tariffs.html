@@ -20,53 +20,55 @@
     }
 ] %}
 
-<section class="tariffs container">
-    <h2 class="landing-title landing-title--md tariffs__title">
-        {{landing.tariffs.TITLE}}
-    </h2>
-    <ul class="tariffs__list">
-        {% for tariff in tariffs %}
-            <li class="tariffs__item">
-                <div class="tariff-card">
-                    <dl>
-                        <dt class="tariff-card__title">
-                            {% if tariff.isPremium %}
-                                <div></div>
-                                {{tariff.title}}
-                                <svg class="tariff-card__icon">
-                                    <use href="./img/icons/sprite.svg#crown"></use>
-                                </svg>
-                            {% else %}
-                                {{tariff.title}}
-                            {% endif %}
-                        </dt>
-                        <dd class="tariff-card__subtitle">
-                            {{tariff.description}}
-                        </dd>
-                    </dl>
-                    <ul class="tariff-card__options">
-                        {% for option in tariff.options %}
-                            <li class="tariff-card__option">
-                                {{option}}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    <span class="tariff-card__price">
-                        {{tariff.price}}
-                    </span>
-                    {% if tariff.isPremium %}
-                        <button class="pmgt-button pmgt-button--primary pmgt-button--md tariff-card__btn"
-                            data-ripple="btn">
-                            {{landing.common.SUBMIT}}
-                        </button>
-                    {% else %}
-                        <button class="pmgt-button pmgt-button--outline pmgt-button--md tariff-card__btn"
-                            data-ripple="btn">
-                            {{landing.common.SUBMIT}}
-                        </button>
-                    {% endif %}
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+<section class="tariffs">
+    <div class="container container--narrow">
+        <h2 class="landing-title landing-title--md tariffs__title">
+            {{landing.tariffs.TITLE}}
+        </h2>
+        <ul class="tariffs__list">
+            {% for tariff in tariffs %}
+                <li class="tariffs__item">
+                    <div class="tariff-card">
+                        <dl>
+                            <dt class="tariff-card__title">
+                                {% if tariff.isPremium %}
+                                    <div></div>
+                                    {{tariff.title}}
+                                    <svg class="tariff-card__icon">
+                                        <use href="./img/icons/sprite.svg#crown"></use>
+                                    </svg>
+                                {% else %}
+                                    {{tariff.title}}
+                                {% endif %}
+                            </dt>
+                            <dd class="tariff-card__subtitle">
+                                {{tariff.description}}
+                            </dd>
+                        </dl>
+                        <ul class="tariff-card__options">
+                            {% for option in tariff.options %}
+                                <li class="tariff-card__option">
+                                    {{option}}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <span class="tariff-card__price">
+                            {{tariff.price}}
+                        </span>
+                        {% if tariff.isPremium %}
+                            <button class="pmgt-button pmgt-button--primary pmgt-button--md tariff-card__btn pmgt-button--blink"
+                                data-ripple="btn">
+                                {{landing.common.SUBMIT}}
+                            </button>
+                        {% else %}
+                            <button class="pmgt-button pmgt-button--outline pmgt-button--md tariff-card__btn"
+                                data-ripple="btn">
+                                {{landing.common.SUBMIT}}
+                            </button>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </section>

@@ -12,5 +12,10 @@
     &__main-info {
         margin-top: -$base-m * 20;
         margin-bottom: -$base-m * 20;
+
+        @media (min-width: $screen-md) {
+            margin-top: -$base-d * 40;
+            margin-bottom: -$base-d * 40;
+        }
     }
 }
