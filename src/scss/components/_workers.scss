@@ -2,9 +2,19 @@
     padding-top: $base-m * 30;
     padding-bottom: $base-m * 30;
 
+    @media (min-width: $screen-md) {
+        padding-top: $base-d * 50;
+        padding-bottom: $base-d * 60;
+    }
+
     &__title {
         text-align: center;
         margin-bottom: $base-m * 20;
+
+        @media (min-width: $screen-md) {
+            text-align: left;
+            margin-bottom: $base-d * 40;
+        }
     }
 
     &__carousel {
@@ -20,6 +30,10 @@
         justify-content: space-between;
 
         margin-bottom: $base-m * 12;
+
+        @media (min-width: $screen-md) {
+            margin-bottom: $base-d * 20;
+        }
     }
 
     &__link {
@@ -32,6 +46,7 @@
     }
 
     &__tab {
+        cursor: pointer;
         font-size: $base-m * 8;
         line-height: 1.4;
         color: $color-gray-darkest;
@@ -42,6 +57,13 @@
 
         padding: $base-m * 3 $base-m * 8;
 
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 12;
+            line-height: 1.5;
+
+            padding: $base-d * 5 $base-d * 16;
+        }
+
         &--active {
             background-color: $color-primary-lighter;
             border-color: $color-primary;
@@ -49,6 +71,10 @@
 
         &:not(:last-of-type) {
             margin-right: $base-m * 4;
+
+            @media (min-width: $screen-md) {
+                margin-right: $base-d * 8;
+            }
         }
     }
 }
@@ -57,6 +83,11 @@
     &__slide {
         width: $base-m * 108;
         padding-right: $base-m * 8;
+
+        @media (min-width: $screen-md) {
+            width: $base-d * 178;
+            padding-right: $base-d * 12;
+        }
     }
 }
 
@@ -70,8 +101,18 @@
 
         margin-bottom: $base-m * 8;
 
+        @media (min-width: $screen-md) {
+            border-radius: 40px;
+            margin-bottom: $base-d * 12;
+        }
+
         img {
+            width: 100%;
             object-fit: cover;
+
+            @media (min-width: $screen-md) {
+                min-height: $base-d * 220;
+            }
         }
     }
 
@@ -86,9 +127,15 @@
         padding: 0;
 
         svg {
+            cursor: pointer;
             color: $color-primary;
             width: $base-m * 32;
             height: $base-m * 32;
+
+            @media (min-width: $screen-md) {
+                width: $base-d * 50;
+                height: $base-d * 50;
+            }
         }
     }
 
@@ -98,10 +145,19 @@
 
         margin-bottom: $base-m * 3;
 
+        @media (min-width: $screen-md) {
+            grid-template-columns: repeat(5, $base-d * 16);
+        }
+
         svg {
             color: $color-secondary-lighter;
             width: $base-m * 12;
             height: $base-m * 12;
+
+            @media (min-width: $screen-md) {
+                width: $base-d * 16;
+                height: $base-d * 16;
+            }
         }
     }
 
@@ -112,6 +168,11 @@
         font-style: normal;
 
         margin-bottom: $base-m;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 12;
+            margin-bottom: $base-d * 2;
+        }
     }
 
     &__review {
@@ -119,5 +180,9 @@
         line-height: 1.4;
 
         margin: 0;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 10;
+        }
     }
 }

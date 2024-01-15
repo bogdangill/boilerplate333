@@ -4,19 +4,40 @@
     padding-top: $base-m * 30;
     padding-bottom: $base-m * 30;
 
+    @media (min-width: $screen-md) {
+        overflow: hidden;
+
+        padding-top: $base-d * 50;
+        padding-bottom: $base-d * 60;
+    }
+
     &__title {
         text-align: center;
         margin-bottom: $base-m * 20;
+
+        @media (min-width: $screen-md) {
+            margin-bottom: $base-d * 40;
+        }
     }
 
     &__slider {
         margin-right: -$base-m * 8;
         margin-bottom: $base-m * 20;
+
+        @media (min-width: $screen-md) {
+            overflow: visible;
+            margin-bottom: $base-d * 40;
+        }
     }
 
     &__slide {
         max-width: $base-m * 143;
         margin-right: $base-m * 8;
+
+        @media (min-width: $screen-md) {
+            max-width: $base-d * 178;
+            margin-right: $base-d * 12;
+        }
     }
 }
 
@@ -27,11 +48,19 @@
     padding: $base-m * 12;
     margin: 0;
 
+    @media (min-width: $screen-md) {
+        padding: $base-d * 16;
+    }
+
     &__rating {
         display: flex;
         align-items: center;
 
         margin-bottom: $base-m * 9;
+
+        @media (min-width: $screen-md) {
+            margin-bottom: $base-d * 10;
+        }
 
         svg {
             width: $base-m * 16;
@@ -46,6 +75,11 @@
         font-weight: 600;
 
         margin-bottom: $base-m * 7;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 10;
+            margin-bottom: $base-d * 8;
+        }
     }
 
     &__description {
@@ -61,6 +95,10 @@
         line-height: 1.5;
         font-weight: 500;
         font-style: normal;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 10;
+        }
     }
 
     &__date {
@@ -68,5 +106,9 @@
         line-height: 1.5;
         font-weight: 500;
         color: $color-gray-light;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 8;
+        }
     }
 }
