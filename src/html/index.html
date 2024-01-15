@@ -10,6 +10,11 @@
     <title>Кадровое агентство Помогатель.ру</title>
 </head>
 <body class="index__body">
+    {% import "_popup-lite.html" as popup %}
+    {% call popup.popupLite('recruiters_form') %}
+        {% include "_form-rec.html" %}
+    {% endcall %}
+
     <div class="index__header">
         {% include "_header.html" %}
     </div>

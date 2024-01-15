@@ -1,0 +1,13 @@
+{% macro popupLite(name) %}
+    <div class="popup popup--hidden" data-popup-lite-name="{{name}}" tabindex="-1" role="dialog">
+        <div class="popup__overlay popup__overlay--dark">
+            <div class="popup__body popup__body--recruiters">
+                <button class="btn btn--close popup__close" aria-label="Закрыть">
+                </button>
+                <div class="popup__content">
+                    {{ caller() }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

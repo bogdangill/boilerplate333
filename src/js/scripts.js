@@ -2,6 +2,7 @@ import { Ripple } from "./ripple.js";
 import Swiper from "swiper";
 import { Pagination, A11y } from "swiper/modules";
 import { toggleAcc } from "./accordion.js";
+import { PopupLite } from "./popup-lite.js";
 
 const rippleTargetsPrimary = document.querySelectorAll(".pmgt-button--primary[data-ripple='btn']");
 const rippleTargetsOutline = document.querySelectorAll(".pmgt-button--outline[data-ripple='btn']");
@@ -20,6 +21,15 @@ for (let target of rippleTargetsOutline) {
         enableForDesktop: true
     });
 };
+
+// const recruiterPopupForm = new PopupLite("data-popup-lite='recruiters_form'", {documentBodySelector: '.index__body'});
+const popupLiteFormTriggers = document.querySelectorAll("[data-popup-lite-call='recruiters_form']");
+
+for (let trigger of popupLiteFormTriggers) {
+    new PopupLite(trigger, {
+        documentBodySelector: '.index__body'
+    });
+}
 
 const workerTabs = document.querySelectorAll('[data-tab]');
 let workerTabsArr = [];

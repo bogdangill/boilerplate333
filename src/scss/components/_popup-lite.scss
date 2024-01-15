@@ -1,0 +1,135 @@
+//ui-kit design components
+@mixin ui-section($paddings-y: $base-d * 12, $paddings-x: $base-d * 12) {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px rgba(51, 51, 51, 0.04), 0px 0px 4px rgba(51, 51, 51, 0.04), 0px 2px 8px -2px rgba(51, 51, 51, 0.08);
+  
+    padding: $paddings-y $paddings-x;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 333;
+    transition: .2s ease-out;
+    overflow: auto;
+}
+
+.popup__overlay {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--dark {
+        background-color: rgba(51, 51, 51, .25);
+    }
+}
+
+.popup__body {
+    position: relative;
+    width: 100%;
+    max-width: $base-d * 414;
+    @include ui-section($base-d * 15, $base-d * 15);
+    overflow: hidden;
+    text-align: left;
+    color: #333;
+
+    @media (min-width: 767px) {
+        min-height: 548px;
+        min-width: 490px;
+        max-height: 100%;
+    }
+
+    &--regions {
+        @media (max-width: 767px) {
+            height: 100%;
+            border-radius: 0;
+            padding: $base-d * 12;
+            box-sizing: border-box;
+        }
+    }
+
+    &--recruiters {
+        padding: 0;
+        padding-bottom: 12px;
+
+        .popup__close {
+            top: $base-d * 8;
+            right: $base-d * 8;
+        }
+
+        @media (max-width: 767px) {
+            height: 100%;
+            border-radius: 0;
+
+            .popup__content {
+                height: 100%;
+            }
+        }
+    }
+
+    &--small {
+        flex-basis: $base-d * 148;
+        padding: $base-d * 8;
+
+        @media (min-width: 767px) {
+            align-self: flex-start;
+            min-height: 220px;
+            min-width: 400px;
+            flex-basis: 400px;
+
+            margin-top: $base-d * 134;
+            padding: $base-d * 20 $base-d * 12 $base-d * 12;
+        }
+
+        .popup__close {
+            top: $base-d * 8;
+            right: $base-d * 8;
+        }
+    }
+}
+
+.popup__close {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: $base-d * 12;
+    height: $base-d * 12;
+    position: absolute;
+    top: $base-d * 15;
+    right: $base-d * 15;
+    z-index: 15;
+    padding: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23b8b8b8' fill-rule='evenodd' d='M5.228 5.228a.778.778 0 0 1 1.1 0L12 10.9l5.672-5.672a.778.778 0 1 1 1.1 1.1L13.1 12l5.672 5.672a.778.778 0 0 1-1.1 1.1L12 13.1l-5.672 5.672a.778.778 0 0 1-1.1-1.1L10.9 12 5.228 6.328a.778.778 0 0 1 0-1.1Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: cover;
+
+    background-color: transparent;
+    border: 0 !important;
+
+    color: #B8B8B8;
+    transition: .2s ease-out;
+
+    &:hover {
+        color: #333;
+        transform: rotate(90deg) scale(1.2);
+        background-color: transparent !important;
+    }
+}
+
+.popup--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+[hidden] {
+    display: none !important;
+}
