@@ -46,6 +46,16 @@
         }
     }
 
+    &--sm {
+        font-size: $base-m * 7;
+        padding: $base-m * 4 $base-m * 8;
+
+        @media (min-width: $screen-md) {
+            font-size: $base-d * 7;
+            padding: $base-d * 5 $base-d * 16;
+        }
+    }
+
     &--primary {
         color: #fff;
         background-color: $color-primary;

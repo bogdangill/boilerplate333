@@ -1,7 +1,9 @@
 {
     "landing": {
         "common": {
-            "SUBMIT": "Оставить заявку"
+            "SUBMIT": "Оставить заявку",
+            "CLOSE": "Закрыть",
+            "NEXT": "Далее"
         },
         "header": {
             "productName": "Помогатель"
@@ -109,6 +111,49 @@
                 "acc_4": {
                     "TITLE": "Как проверяем работников?",
                     "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                }
+            }
+        },
+        "form_rec": {
+            "mobile_headers": {
+                "ABOUT_WORKER": "О работнике",
+                "TARIFF": "Тариф",
+                "CONNECTION_DATA": "Данные для связи"
+            },
+            "labels": {
+                "REGION": "Регион, в котором требуется работник",
+                "SPECIALIZATION": "Специальность работника",
+                "SALARY": "Сколько готовы платить работнику",
+                "PHONE": "Ваш номер телефона для связи",
+                "NAME": "Как к Вам обращаться",
+                "COMMENT": "Любой ваш комментарий",
+                "USER_AGREEMENT": "Согласие с",
+                "PERSONAL_DATA": "«Политикой в отношении обработки персональных данных»"
+            },
+            "specializations": {
+                "NANNY": "Няня",
+                "NURSE": "Сиделка",
+                "HOUSEKEEPER": "Домработница",
+                "TUTOR": "Репетитор",
+                "DRIVER": "Водитель",
+                "PSYCH": "Психолог",
+                "MASSEUR": "Массажист",
+                "PAIR": "Семейная пара"
+            },
+            "UNTIL": "До",
+            "PER_MONTH": "₽/месяц",
+            "REC_INFO": "Предварительная информация для рекрутера",
+            "NAME_PLACEHOLDER": "Ваше ФИО",
+            "tariffs": {
+                "premium": {
+                    "TITLE": "Премиум",
+                    "OPTION_1": "12 подходящих работников, с которыми наш рекрутер предварительно провел интервью",
+                    "OPTION_2": "6 собеседований с Вами"
+                },
+                "standard": {
+                    "TITLE": "Стандарт",
+                    "OPTION_1": "Подберем вам 6 подходящих работников, с которыми наш рекрутер предварительно провел интервью",
+                    "OPTION_2": "Организуем Вам 3 собеседования, с выбранными рабониками"
                 }
             }
         }

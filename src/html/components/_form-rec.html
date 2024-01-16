@@ -1,19 +1,50 @@
+{% set tariffs = [
+    {
+        isPremium: true,
+        title: landing.form_rec.tariffs.premium.TITLE,
+        options: [
+            landing.form_rec.tariffs.premium.OPTION_1,
+            landing.form_rec.tariffs.premium.OPTION_2
+        ],
+        price: "19 990 ₽",
+        value: 19990,
+        color: "#FFA041"
+    },
+    {
+        title: landing.form_rec.tariffs.standard.TITLE,
+        options: [
+            landing.form_rec.tariffs.standard.OPTION_1,
+            landing.form_rec.tariffs.standard.OPTION_2
+        ],
+        price: "9 990 ₽",
+        value: 9990,
+        color: "#4F89FF"
+    }
+] %}
+
+{% macro button(type, step, modifier, attribute) %}
+    <button class="pmgt-button form-rec__btn {{modifier}} pmgt-button--md pmgt-button--primary pmgt-button--blink" data-ripple="btn" type="{{type}}" data-rec-form-step="{{step}}">
+        {{ caller() }}
+    </button>
+{% endmacro %}
+
 <form id="formRec" class="form-rec swiper-container">
-    <header class="form-rec__header r-f-header">
-        <button class="r-f-header__btn" type="button" data-rec-slide-prev>
+    <header class="form-rec__header form-header">
+        <button class="form-header__btn" type="button" data-rec-slide-prev>
             <svg>
                 <use xlink:href="../img/svg/sprite/sprite.svg#arrow-left"></use>
             </svg>
         </button>
-        <div class="r-f-header__title" id="recruitersFormTitleM"></div>
+        <div class="form-header__title" id="recruitersFormTitleM"></div>
     </header>
-    <div class="form-rec__progressbar r-f-progressbar"></div>
+    <div class="form-rec__progressbar form-progressbar"></div>
     <div class="form-rec__body swiper-wrapper">
-        <div class="form-rec__slide swiper-slide" data-rec-form-title="О работнике">
+        {# О РАБОТНИКЕ #}
+        <div class="form-rec__slide swiper-slide" data-rec-form-title="{{landing.form_rec.mobile_headers.ABOUT_WORKER}}">
             <div class="form-rec__item">
                 <label class="r-form-item" tabindex="0">
                     <div class="r-form-item__title">
-                        Регион, в котором требуется работник
+                        {{landing.form_rec.labels.REGION}}
                     </div>
                     <div class="r-form-item__select">
                         <pmgt-select-wrapper data-decorator="cities-and-regions"
@@ -27,18 +58,18 @@
             <div class="form-rec__item">
                 <label class="r-form-item">
                     <div class="r-form-item__title">
-                        Специальность работника
+                        {{landing.form_rec.labels.SPECIALIZATION}}
                     </div>
                     <div class="r-form-item__select">
                         <select name="specialization" required>
-                            <option value="2">Няня</option>
-                            <option value="4">Сиделка</option>
-                            <option value="8">Домработница</option>
-                            <option value="16">Репетитор</option>
-                            <option value="32">Водитель</option>
-                            <option value="64">Психолог</option>
-                            <option value="128">Массажист</option>
-                            <option value="256">Семейная пара</option>
+                            <option value="2">{{landing.form_rec.specializations.NANNY}}</option>
+                            <option value="4">{{landing.form_rec.specializations.NURSE}}</option>
+                            <option value="8">{{landing.form_rec.specializations.HOUSEKEEPER}}</option>
+                            <option value="16">{{landing.form_rec.specializations.TUTOR}}</option>
+                            <option value="32">{{landing.form_rec.specializations.DRIVER}}</option>
+                            <option value="64">{{landing.form_rec.specializations.PSYCH}}</option>
+                            <option value="128">{{landing.form_rec.specializations.MASSEUR}}</option>
+                            <option value="256">{{landing.form_rec.specializations.PAIR}}</option>
                         </select>
                     </div>
                 </label>
@@ -46,104 +77,84 @@
             <div class="form-rec__item">
                 <label class="r-form-item">
                     <div class="r-form-item__title">
-                        Сколько готовы платить работнику
+                        {{landing.form_rec.labels.SALARY}}
                     </div>
                     <div class="r-form-item__input r-form-item__input--salary">
                         <div class="r-form-item__hint r-form-item__hint--left">
-                            До
+                            {{landing.form_rec.UNTIL}}
                         </div>
                         <input type="number" name="salary" min="0" max="1000000" placeholder="50000"
                             required>
                         <div class="r-form-item__hint r-form-item__hint--right">
-                            ₽/месяц
+                            {{landing.form_rec.PER_MONTH}}
                         </div>
                     </div>
                     <div class="r-form-item__hint r-form-item__hint--bottom">
-                        Предварительная информация для рекрутера
+                        {{landing.form_rec.REC_INFO}}
                     </div>
                 </label>
             </div>
 
-            <button class="form-rec__btn button" data-rec-form-step="0" type="button">
-                Далее
-            </button>
+            {% call button("button", 0) %}
+                {{landing.common.NEXT}}
+            {% endcall %}
         </div>
-        <div class="form-rec__slide swiper-slide" data-rec-form-title="Тариф">
-            <ul class="r-f-tariff-list">
-                <li class="r-f-tariff-list__item">
-                    <label class="tariff-card tariff-card--premium">
-                        <input type="radio" name="tariff" value="19990" required/>
-                        <header class="tariff-card__header">
-                            <div class="tariff-card__checkmark" style="color: #FFA041;">
-                                <div class="tariff-card__circle"></div>
-                                <svg>
-                                    <use
-                                        xlink:href="../img/svg/sprite/sprite.svg#check-circle-fill">
-                                    </use>
-                                </svg>
-                            </div>
-                            <div class="tariff-card__title">
-                                Премиум
-                                <svg>
-                                    <use xlink:href="../img/svg/sprite/sprite.svg#crown"></use>
-                                </svg>
-                            </div>
-                            <div class="tariff-card__price">
-                                19 990 ₽
-                            </div>
-                        </header>
-                        <ul class="tariff-card__list">
-                            <li class="tariff-card__item">
-                                12 подходящих работников, с которыми наш рекрутер предварительно
-                                провел интервью
-                            </li>
-                            <li class="tariff-card__item">
-                                6 собеседований с Вами
-                            </li>
-                        </ul>
-                    </label>
-                </li>
-                <li class="r-f-tariff-list__item">
-                    <label class="tariff-card tariff-card--standard">
-                        <input type="radio" name="tariff" value="9990" />
-                        <header class="tariff-card__header">
-                            <div class="tariff-card__checkmark" style="color: #46B2AC;">
-                                <div class="tariff-card__circle"></div>
-                                <svg>
-                                    <use
-                                        xlink:href="../img/svg/sprite/sprite.svg#check-circle-fill">
-                                    </use>
-                                </svg>
-                            </div>
-                            <div class="tariff-card__title">
-                                Стандарт
-                            </div>
-                            <div class="tariff-card__price">
-                                9 990 ₽
-                            </div>
-                        </header>
-                        <ul class="tariff-card__list">
-                            <li class="tariff-card__item">
-                                Подберем вам 6 подходящих работников, с которыми наш рекрутер
-                                предварительно провел интервью
-                            </li>
-                            <li class="tariff-card__item">
-                                Организуем Вам 3 собеседования, с выбранными рабониками
-                            </li>
-                        </ul>
-                    </label>
-                </li>
+        {# ТАРИФ #}
+        <div class="form-rec__slide swiper-slide" data-rec-form-title="{{landing.form_rec.mobile_headers.TARIFF}}">
+            <ul class="form-tariff-list">
+                {% for tariff in tariffs %}
+                    <li class="form-tariff-list__item">
+                        {% set cardModifier = "" %}
+                        {% if tariff.isPremium %}
+                            {% set cardModifier = "form-tariff-card--premium" %}
+                        {% else %}
+                            {% set cardModifier = "form-tariff-card--standard" %}
+                        {% endif %}
+                        <label class="form-tariff-card {{cardModifier}}">
+                            <input type="radio" name="tariff" value="{{tariff.value}}" required/>
+                            <header class="form-tariff-card__header">
+                                <div class="form-tariff-card__checkmark" style="color: {{tariff.color}};">
+                                    <div class="form-tariff-card__circle"></div>
+                                    <svg>
+                                        <use
+                                            xlink:href="../img/svg/sprite/sprite.svg#check-circle-fill">
+                                        </use>
+                                    </svg>
+                                </div>
+                                <div class="form-tariff-card__title">
+                                    {{tariff.title}}
+                                    {% if tariff.isPremium %}
+                                        <svg>
+                                            <use xlink:href="../img/svg/sprite/sprite.svg#crown"></use>
+                                        </svg>
+                                    {% endif %}
+                                </div>
+                                <div class="form-tariff-card__price">
+                                    {{tariff.price}}
+                                </div>
+                            </header>
+                            <ul class="form-tariff-card__list">
+                                {% for option in tariff.options %}
+                                    <li class="form-tariff-card__item">
+                                        {{option}}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </label>
+                    </li>
+                {% endfor %}
             </ul>
-            <input type="text" class="tariff-card__focus-trap">
-            <button class="form-rec__btn button" type="button" data-rec-form-step="1">
-                Далее
-            </button>
+            <input type="text" class="form-tariff-card__focus-trap">
+            {% call button("button", 1) %}
+                {{landing.common.NEXT}}
+            {% endcall %}
         </div>
-        <div class="form-rec__slide swiper-slide" data-rec-form-title="Данные для связи">
+        {# ДАННЫЕ ДЛЯ СВЯЗИ #}
+        <div class="form-rec__slide swiper-slide" data-rec-form-title="{{landing.form_rec.mobile_headers.CONNECTION_DATA}}">
             <div class="form-rec__item">
                 <label class="r-form-item">
                     <div class="r-form-item__title">
-                        Ваш номер телефона для связи
+                        {{landing.form_rec.labels.PHONE}}
                     </div>
                     <div class="r-form-item__input">
                         <input type="text" name="phoneNumber" placeholder="+7 (000) 000-00-00"
@@ -154,17 +165,17 @@
             <div class="form-rec__item">
                 <label class="r-form-item">
                     <div class="r-form-item__title">
-                        Как к Вам обращаться
+                        {{landing.form_rec.labels.NAME}}
                     </div>
                     <div class="r-form-item__input">
-                        <input type="text" name="name" placeholder="Ваше ФИО" required>
+                        <input type="text" name="name" placeholder="{{landing.form_rec.labels.NAME_PLACEHOLDER}}" required>
                     </div>
                 </label>
             </div>
             <div class="form-rec__item">
                 <label class="r-form-item">
                     <div class="r-form-item__title">
-                        Любой ваш комментарий
+                        {{landing.form_rec.labels.COMMENT}}
                     </div>
                     <div class="r-form-item__input">
                         <textarea name="comment"></textarea>
@@ -173,19 +184,18 @@
             </div>
             <div class="form-rec__item form-rec__item--checkbox">
                 <label class="pmgt-checkbox">
-                    Согласие с
+                    {{landing.form_rec.labels.USER_AGREEMENT}}
                     <a
                         href="https://pomogatel.ru/content/politika-v-otnoshenii-obrabotki-personalnykh-dannykh-pomogatel.html">
-                        «Политикой в отношении обработки персональных данных»
+                        {{landing.form_rec.labels.PERSONAL_DATA}}
                     </a>
                     <input type="checkbox" checked="checked" name="isAgree">
                     <span class="pmgt-checkbox__checkmark"></span>
                 </label>
             </div>
-            <button class="form-rec__btn form-rec__btn--submit button" data-rec-form-step="2"
-                type="submit" data-popup-close>
-                Оставить заявку
-            </button>
+            {% call button("button", 2, "form-rec__btn--submit", "data-popup-close") %}
+                {{landing.common.NEXT}}
+            {% endcall %}
         </div>
     </div>
 </form>
