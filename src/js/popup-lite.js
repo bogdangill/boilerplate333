@@ -1,12 +1,9 @@
 export class PopupLite {
     constructor(
         triggerSelector = '[data-popup-lite-call]',
-        {
-            documentBodySelector = 'body'
-        }
     ) {
         this.trigger = triggerSelector;
-        this.documentBody = document.querySelector(documentBodySelector);
+        this.documentBody = document.querySelector('body');
         this.init();
     }
 

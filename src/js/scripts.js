@@ -1,8 +1,14 @@
+import "./settings-value-store.js";
+import "./init-dictionary.js";
+import "./regions-provider.js";
 import { Ripple } from "./ripple.js";
 import Swiper from "swiper";
 import { Pagination, A11y } from "swiper/modules";
 import { toggleAcc } from "./accordion.js";
 import { PopupLite } from "./popup-lite.js";
+import "./pmgt-select-wrapper.js";
+import "./pmgt-select-decorators.js";
+import "./form-rec.js";
 
 const rippleTargetsPrimary = document.querySelectorAll(".pmgt-button--primary[data-ripple='btn']");
 const rippleTargetsOutline = document.querySelectorAll(".pmgt-button--outline[data-ripple='btn']");
@@ -22,13 +28,22 @@ for (let target of rippleTargetsOutline) {
     });
 };
 
+const videos = document.querySelectorAll('video');
+
+videos.forEach(video => {
+    video.addEventListener('mouseover', function() {
+        this.play();
+    });
+    video.addEventListener('mouseleave', function() {
+        this.pause();
+    })
+})
+
 // const recruiterPopupForm = new PopupLite("data-popup-lite='recruiters_form'", {documentBodySelector: '.index__body'});
 const popupLiteFormTriggers = document.querySelectorAll("[data-popup-lite-call='recruiters_form']");
 
 for (let trigger of popupLiteFormTriggers) {
-    new PopupLite(trigger, {
-        documentBodySelector: '.index__body'
-    });
+    new PopupLite(trigger);
 }
 
 const workerTabs = document.querySelectorAll('[data-tab]');
@@ -96,4 +111,4 @@ if (accordions.length > 0) {
             }
         })
     })
-}
+};
