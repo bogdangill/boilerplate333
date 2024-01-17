@@ -34,9 +34,7 @@
             display: grid;
             grid-template-columns: repeat(2, minmax($base-d * 190, $base-d * 238));
             justify-content: center;
-            grid-template-areas: 
-                "b a"
-                "b c";
+            grid-template-areas: "pink peach" "pink blue";
             gap: $base-d * 12;
             background-image: url('../../img/line.svg');
             background-position: center 87%;
@@ -47,13 +45,13 @@
                 margin: 0 !important;
 
                 &:first-of-type {
-                    grid-area: a;
+                    grid-area: peach;
                 }
                 &:last-of-type {
-                    grid-area: c;
+                    grid-area: blue;
                 }
                 &:nth-of-type(2) {
-                    grid-area: b;
+                    grid-area: pink;
                     display: flex;
                     align-items: center;
                 }
