@@ -11,7 +11,13 @@ export class PopupLite {
         const popupName = this.trigger.dataset.popupLiteCall;
         const popupBody = document.querySelector(`[data-popup-lite-name="${popupName}"]`);
 
-        this.trigger.addEventListener('click', () => this._toggle('open', popupBody));
+        this.trigger.addEventListener('click', () => {
+            //временное решение для видеоанкет
+            if (this.trigger.dataset.src) {
+                popupBody.querySelector('[src]').setAttribute("src", this.trigger.dataset.src);
+            };
+            this._toggle('open', popupBody);
+        });
 
         const btnClose = popupBody.querySelector('.popup__close');
         const btnCloseCustom = popupBody.querySelector('[data-popup-lite-close]');
@@ -33,5 +39,12 @@ export class PopupLite {
         this.documentBody.style.overflowY = values.bodyOverflow;
         popup.classList.remove(values.classToRemove);
         popup.classList.add(values.classToAdd);
+
+        //временное решение для видеоанкет
+        const video = popup.querySelector('video');
+
+        if (this.trigger.dataset.src && action !== 'open') {
+            video.pause();
+        };
     }
 }

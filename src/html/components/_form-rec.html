@@ -32,7 +32,7 @@
     <header class="form-rec__header form-header">
         <button class="form-header__btn" type="button" data-rec-slide-prev>
             <svg>
-                <use xlink:href="../img/svg/sprite/sprite.svg#arrow-left"></use>
+                <use xlink:href="./img/icons/sprite.svg#arrow-left"></use>
             </svg>
         </button>
         <div class="form-header__title" id="recruitersFormTitleM"></div>
@@ -117,7 +117,7 @@
                                     <div class="form-tariff-card__circle"></div>
                                     <svg>
                                         <use
-                                            xlink:href="../img/svg/sprite/sprite.svg#check-circle-fill">
+                                            xlink:href="./img/icons/sprite.svg#check-circle-fill">
                                         </use>
                                     </svg>
                                 </div>
@@ -125,7 +125,7 @@
                                     {{tariff.title}}
                                     {% if tariff.isPremium %}
                                         <svg>
-                                            <use xlink:href="../img/svg/sprite/sprite.svg#crown"></use>
+                                            <use xlink:href="./img/icons/sprite.svg#crown-orange"></use>
                                         </svg>
                                     {% endif %}
                                 </div>
@@ -185,16 +185,18 @@
             <div class="form-rec__item form-rec__item--checkbox">
                 <label class="pmgt-checkbox">
                     {{landing.form_rec.labels.USER_AGREEMENT}}
-                    <a
+                    <a class="btn-link"
                         href="https://pomogatel.ru/content/politika-v-otnoshenii-obrabotki-personalnykh-dannykh-pomogatel.html">
-                        {{landing.form_rec.labels.PERSONAL_DATA}}
+                        <span class="btn-link__text">
+                            {{landing.form_rec.labels.PERSONAL_DATA}}
+                        </span>
                     </a>
                     <input type="checkbox" checked="checked" name="isAgree">
                     <span class="pmgt-checkbox__checkmark"></span>
                 </label>
             </div>
             {% call button("submit", 2, "form-rec__btn--submit", "disabled data-popup-close") %}
-                {{landing.common.NEXT}}
+                {{landing.common.SUBMIT}}
             {% endcall %}
         </div>
     </div>

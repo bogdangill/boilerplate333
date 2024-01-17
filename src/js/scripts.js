@@ -28,23 +28,13 @@ for (let target of rippleTargetsOutline) {
     });
 };
 
-const videos = document.querySelectorAll('video');
-
-videos.forEach(video => {
-    video.addEventListener('mouseover', function() {
-        this.play();
-    });
-    video.addEventListener('mouseleave', function() {
-        this.pause();
-    })
-})
-
-// const recruiterPopupForm = new PopupLite("data-popup-lite='recruiters_form'", {documentBodySelector: '.index__body'});
 const popupLiteFormTriggers = document.querySelectorAll("[data-popup-lite-call='recruiters_form']");
-
 for (let trigger of popupLiteFormTriggers) {
     new PopupLite(trigger);
 }
+
+const popupLiteVideoTriggers = document.querySelectorAll("[data-popup-lite-call='video_player']");
+popupLiteVideoTriggers.forEach(trigger => new PopupLite(trigger));
 
 const workerTabs = document.querySelectorAll('[data-tab]');
 let workerTabsArr = [];

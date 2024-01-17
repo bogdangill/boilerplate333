@@ -55,6 +55,15 @@
         &--checkbox {
             margin-bottom: $base-m * 12;
             margin-top: auto;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
         }
     }
 
@@ -73,6 +82,7 @@
             margin-top: 0;
 
             @media (min-width: $screen-md) {
+                font-size: $base-d * 7;
                 width: auto;
 
                 margin-top: $base-d * 12;
@@ -135,6 +145,11 @@
         color: #333;
         padding: 0;
         border: 0;
+
+        svg {
+            width: $base-m * 12;
+            height: $base-m * 12;
+        }
     }
 
     &__title {
@@ -303,6 +318,7 @@
 }
 
 .form-tariff-card {
+    cursor: pointer;
     position: relative;
     display: block;
     text-align: left;
@@ -388,6 +404,8 @@
         height: $base-m * 12;
         
         svg {
+            width: $base-m * 12;
+            height: $base-m * 12;
             visibility: hidden;
         }
     }

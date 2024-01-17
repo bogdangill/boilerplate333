@@ -65,9 +65,39 @@
         background-color: transparent;
         border-color: $color-gray;
     }
+}
 
-    a {
-        color: inherit;
-        text-decoration: none;
+.btn-link {
+    color: $color-gray-darkest;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: normal;
+    transition: .2s ease-out;
+
+    &--primary {
+        color: $color-primary;
+    }
+
+    &__text {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: $color-primary;
+            transition: .25s ease-out;
+        }
+    }
+
+    &:hover .btn-link__text::after {
+        width: 100%;
+    }
+
+    &:active {
+        opacity: .6;
     }
 }

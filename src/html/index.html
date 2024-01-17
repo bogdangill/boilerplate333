@@ -11,7 +11,7 @@
 </head>
 <body class="index__body">
     {% import "_popup-lite.html" as popup %}
-    {% call popup.popupLite('recruiters_form') %}
+    {% call popup.popupLite('recruiters_form', 'popup__body--recruiters') %}
         {% include "_form-rec.html" %}
     {% endcall %}
 
