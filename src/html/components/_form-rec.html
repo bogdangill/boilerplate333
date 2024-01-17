@@ -23,7 +23,7 @@
 ] %}
 
 {% macro button(type, step, modifier, attribute) %}
-    <button class="pmgt-button form-rec__btn {{modifier}} pmgt-button--md pmgt-button--primary pmgt-button--blink" data-ripple="btn" type="{{type}}" data-rec-form-step="{{step}}">
+    <button class="pmgt-button form-rec__btn {{modifier}} pmgt-button--md pmgt-button--primary pmgt-button--blink" data-ripple="btn" type="{{type}}" data-rec-form-step="{{step}}" {{attribute}}>
         {{ caller() }}
     </button>
 {% endmacro %}
@@ -193,7 +193,7 @@
                     <span class="pmgt-checkbox__checkmark"></span>
                 </label>
             </div>
-            {% call button("button", 2, "form-rec__btn--submit", "data-popup-close") %}
+            {% call button("submit", 2, "form-rec__btn--submit", "disabled data-popup-close") %}
                 {{landing.common.NEXT}}
             {% endcall %}
         </div>

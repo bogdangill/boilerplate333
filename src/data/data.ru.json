@@ -98,19 +98,19 @@
             "accordions": {
                 "acc_1": {
                     "TITLE": "Почему так дёшево?",
-                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                    "DESCRIPTION": "Мы никому не платим за базу кандидатов, она у нас своя — собрана за много лет работы. Найти для вас нужного помощника нашим рекрутерам действительно легко"
                 },
                 "acc_2": {
                     "TITLE": "А если я сам буду искать?",
-                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
-                },
+                    "DESCRIPTION": "Вы можете зарегистрироваться на сайте Помогатель.ру и найти работника самостоятельно. Но если вы хотите сэкономить время, то лучше обратиться к рекрутеру"
+                }, 
                 "acc_3": {
                     "TITLE": "Что за гарантия в тарифе Премиум?",
-                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                    "DESCRIPTION": "Если в течение 1 года после найма с помощью рекрутера вам придётся расстаться с работником по любой причине, мы бесплатно подберём нового. Нам важно найти надёжного помощника для вас"
                 },
                 "acc_4": {
                     "TITLE": "Как проверяем работников?",
-                    "DESCRIPTION": "Lorem ipsum dolor sit amet consectetur. Eros ultricies ut blandit eget iaculis tempus enim. Sit ipsum tellus consequat consequat turpis aliquet facilisis duis."
+                    "DESCRIPTION": "Работники проходят личное интервью с рекрутером, проверку паспорта. А также дополнительно можно запросить проверку благонадежности понравившегося работника, в которую входит 15 различных отчетов"
                 }
             }
         },

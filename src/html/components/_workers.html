@@ -1,30 +1,42 @@
 {% set workers = {
     nannies: [
         {
-            name: "Виктория Н.",
-            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+            name: "Лилия",
+            text: "Предлагаю свою помощь родителям новорожденных детей. Мой опыт работы няней с 2015 года по сегодняшний день.",
+            photoSrc: "https://148711.selcdn.ru/video/2a1080631caebb1e6e4ba78ee1e2ebc8.jpg",
+            vidSrc: "https://148711.selcdn.ru/video/28a766ebd8a0cf084b4cae1e099882ef.mp4"
         },
         {
-            name: "Виктория Н.",
-            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+            name: "Виктория",
+            text: "Меня зовут Виктория, по образованию я детский клинический психолог. На данный момент успешно прошла практику в больницах и школах Москвы.",
+            photoSrc: "https://148711.selcdn.ru/video/7841adf4af02e0ff422e32214d67c538.jpg",
+            vidSrc: "https://148711.selcdn.ru/video/2a1080631caebb1e6e4ba78ee1e2ebc8.mp4"
         },
         {
-            name: "Виктория Н.",
-            text: "Я очень давно работаю няней, что и забыла когда все это ..."
+            name: "Кристина",
+            text: "Я профессиональная няня. И мне доверяют родители самое ценное. Сотрудничала с семьями на протяжении нескольких лет в качестве гувернантки.",
+            photoSrc: "https://148711.selcdn.ru/video/71932f2b4d2af315152f8a21dd3b4e1d.jpg",
+            vidSrc: "https://148711.selcdn.ru/video/ec95c0aa0ceefc698fc705f97b4a4658.mp4"
         }
     ],
     housekeepers: [
         {
-            name: "Рабыня Изаура",
-            text: "Я очень давно работаю домашней рабыней, что и забыла когда все это ..."
+            name: "Татьяна",
+            text: "С 09.2021 по 12.2022 работаю в доме 500кв.м в семье из 5 человек в качестве помощницы по хозяйству.С 14.12.2022 по настоящее время семья уехала, осуществляю поддерживающую уборку дома.",
+            photoSrc: "https://148711.selcdn.ru/video/883a475b4c955d17e7a039f8d9f7eb10.jpg",
+            videoSrc: "https://148711.selcdn.ru/video/883a475b4c955d17e7a039f8d9f7eb10.mp4"
         },
         {
-            name: "Рабыня Изаура",
-            text: "Я очень давно работаю домашней рабыней, что и забыла когда все это ..."
+            name: "Оксана",
+            text: "Прекрасно ухаживаю за VIP-гардеробом, имею большой опыт в этой сфере, знаю бытовую технику и химию, прекрасно её использую.",
+            photoSrc: "https://148711.selcdn.ru/video/de08e132731409ca46dd0c45a4c095f7.jpg",
+            videoSrc: "https://148711.selcdn.ru/video/de08e132731409ca46dd0c45a4c095f7.mp4"
         },
         {
-            name: "Рабыня Изаура",
-            text: "Я очень давно работаю домашней рабыней, блиин вот бы щас в Бразилию сгонять ..."
+            name: "Ольга",
+            text: "Я добрая, неконфликтная, внимательная, нахожу подход к детям. Могу занять ребят: развивающими играми, чтением, лепкой.",
+            photoSrc: "https://148711.selcdn.ru/video/f00f33b73844b59a49350c8b08ffa5dd.jpg",
+            videoSrc: "https://148711.selcdn.ru/video/f00f33b73844b59a49350c8b08ffa5dd.mp4"
         }
     ]
 } %}
@@ -48,17 +60,8 @@
                             <li class="workers-slider__slide swiper-slide">
                                 <blockquote class="worker-card">
                                     <div class="worker-card__photo">
-                                        <picture>
-                                            <source
-                                                srcset='../../img/nanny-{{loop.index}}.webp 1x, ../../img/nanny-{{loop.index}}@2x.webp 2x'
-                                                type="image/webp">
-                                            <img
-                                                src="../../img/nanny-{{loop.index}}.png"
-                                                srcset="../../img/nanny-{{loop.index}}@2x.png"
-                                                alt="{{nanny.name}}"
-                                                width="216"
-                                                height="264">
-                                        </picture>
+                                        <img src="{{nanny.photoSrc}}" alt="{{nanny.name}}" width="216" height="264">
+                                        {# <video src="{{nanny.vidSrc}}" width="216" height="264"></video> #}
                                         <button class="worker-card__btn">
                                             <svg>
                                                 <use xlink:href="./img/icons/sprite.svg#play"></use>
@@ -101,17 +104,7 @@
                             <li class="workers-slider__slide swiper-slide">
                                 <blockquote class="worker-card">
                                     <div class="worker-card__photo">
-                                        <picture>
-                                            <source
-                                                srcset='../../img/nanny-{{loop.index}}.webp 1x, ../../img/nanny-{{loop.index}}@2x.webp 2x'
-                                                type="image/webp">
-                                            <img
-                                                src="../../img/nanny-{{loop.index}}.png"
-                                                srcset="../../img/nanny-{{loop.index}}@2x.png"
-                                                alt="{{nanny.name}}"
-                                                width="216"
-                                                height="264">
-                                        </picture>
+                                        <img src="{{housekeeper.photoSrc}}" alt="{{housekeeper.name}}" width="216" height="264">
                                         <button class="worker-card__btn">
                                             <svg>
                                                 <use xlink:href="./img/icons/sprite.svg#play"></use>

@@ -106,12 +106,13 @@
             margin-bottom: $base-d * 12;
         }
 
-        img {
+        img,
+        video {
             width: 100%;
             object-fit: cover;
 
             @media (min-width: $screen-md) {
-                min-height: $base-d * 220;
+                height: $base-d * 220;
             }
         }
     }
